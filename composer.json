@@ -1,8 +1,7 @@
 {
-    "name": "link1st/laravel-easemob",
-    "description": "环信及时通讯laravel包开发，用于环信用户、群、聊天室等功能",
+    "name": "zz98500/laravel-easemob",
+    "description": "环信及时通讯laravel包开发，用于环信用户、群、聊天室等功能,修改于link1st版本，感谢",
     "keywords": [
-        "link1st",
         "laravel",
         "easemob"
     ],    
@@ -14,8 +13,7 @@
     },
     "authors": [
         {
-            "name": "link1st",
-            "email": "link12stl@gmail.com"
+            "name": "zz98500"
         }
     ],
     "autoload": {

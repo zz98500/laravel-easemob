@@ -1,14 +1,14 @@
 # laravel-easemob
 环信及时通讯laravel包开发，用于环信用户、群、聊天室等功能
-
+此版本修改于link1st的版本
 ## 安装
 加载包
 
-`"link1st/laravel-easemob": "dev-master"`
+`"zz98500/laravel-easemob": "dev-master"`
 
 或
 
-`composer require link1st/laravel-easemob`
+`composer require zz98500/laravel-easemob`
 
 在配置文件中添加 **config/app.php**
 
@@ -108,6 +108,8 @@ $user = \Easemob::getUserAll(100,'LTgzNDAxMjM3OTprcFJFRUpzdUVlYWh5V1UwQjNSbldR')
 ### 消息透传
 `\Easemob::sendMessagePNS($users, $target_type = 'users', $action = "", $send_user = 'admin');`
 
+### 拉取历史消息
+`\Easemob::getChatMessages($time = '20170801');`
 - - - 
 ### 获取群信息
 `\Easemob::groups($group_ids);`

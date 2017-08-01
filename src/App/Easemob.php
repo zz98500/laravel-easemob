@@ -191,7 +191,7 @@ class Easemob
     {
         $url          = $this->url.'users/'.$user_name.'/password';
         $option       = [
-            'newpassword' => $password
+            'newpassword' => $new_password
         ];
         $access_token = $this->getToken();
         $header []    = 'Authorization: Bearer '.$access_token;
@@ -320,8 +320,9 @@ class Easemob
         ];
         $access_token = $this->getToken();
         $header []    = 'Authorization: Bearer '.$access_token;
+        $header []    = 'restrict-access : true';
 
-        return Http::postCurl($url, $option, $header, 'POST');
+        return Http::postCurlTow($url, $option, $header, 'POST');
     }
 
 
@@ -343,6 +344,23 @@ class Easemob
         $header []    = 'share-secret: '.$share_secret;
 
         return Http::postCurl($url, $option, $header, 'GET', 10, false);
+    }
+
+    /***********************  拉取历史消息   *********************************/
+
+    /**
+     * 拉取历史消息
+     * @param $time
+     * @return mixed
+     */
+    public function getChatMessages($time)
+    {
+        $url          = $this->url.'chatmessages/'.$time;
+        $option       = [];
+        $access_token = $this->getToken();
+        $header []    = 'Authorization: Bearer '.$access_token;
+
+        return Http::postCurl($url, $option, $header, 'GET');
     }
 
 
